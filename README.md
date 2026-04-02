@@ -5,7 +5,7 @@
 
 ## 📋 Giới thiệu
 
-Đề tài được thực hiện nhằm hỗ trợ người nông dân phát hiện sớm các loại bệnh phổ biến trên cây lúa thông qua việc chụp ảnh lá lúa bằng điện thoại. Hệ thống tự động phân tích và đưa ra kết quả chẩn đoán cùng lời khuyên xử lý ngay trên thiết bị, không cần kết nối internet.
+Đề tài được thực hiện nhằm hỗ trợ người nông dân phát hiện sớm các loại bệnh phổ biến trên cây lúa thông qua việc phân tích hình ảnh lá lúa. Hệ thống tự động phân tích và đưa ra kết quả chẩn đoán về bệnh lá lúa.
 
 ### Các loại bệnh được nhận diện
 | Tên bệnh | Tên khoa học |
@@ -33,14 +33,9 @@
 
 ## 🛠️ Công nghệ sử dụng
 
-**Huấn luyện mô hình:**
 - Python, TensorFlow/Keras
 - ResNet-50 (pretrained ImageNet)
 - Google Colab (GPU T4)
-
-**Ứng dụng di động:**
-- Flutter (Android)
-- TensorFlow Lite
 
 **Thư viện hỗ trợ:** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, OpenCV
 
@@ -49,35 +44,13 @@
 ## 📁 Cấu trúc dự án
 
 ```
-├── model/                  # Notebook huấn luyện và dữ liệu
-│   ├── data/
-│   │   ├── Bacterialblight
-│   │   ├── Brownspot
-│   │   └── Leafsmut
-│   └── train.ipynb
-├── rice_disease_detector/                    # Ứng dụng Flutter
-│   ├── lib/
-│   │   ├── main.dart
-│   │   ├── home_screen.dart
-│   │   ├── result_screen.dart
-│   │   ├── disease_info.dart
-│   │   ├── disease_model.dart
-│   │   └── scan_controller.dart
-│   └── assets/
-│       ├── images/
-│       └── model/          # Mô hình hoàn thiện
-│           └── rice_disease_model.tflite      
+├── data/
+│   ├── Bacterialblight/
+│   ├── Blast/
+│   └── Brownspot/
+├── train.ipynb             # Notebook huấn luyện mô hình
 └── README.md
 ```
-
----
-
-## 📱 Chức năng ứng dụng
-
-- **Chụp ảnh mới** — chẩn đoán trực tiếp qua camera
-- **Chọn ảnh từ thư viện** — chẩn đoán từ ảnh có sẵn
-- **Xem kết quả** — tên bệnh, độ tin cậy, lời khuyên xử lý
-- **Tra cứu thông tin** — đặc điểm nhận dạng, thuốc đặc trị từng loại bệnh
 
 ---
 
@@ -91,17 +64,9 @@
 
 ## 🚀 Hướng dẫn chạy
 
-### Huấn luyện mô hình
 ```bash
-# Mở notebook trên Google Colab
+# Mở train.ipynb trên Google Colab
 # Kết nối Google Drive và chạy các cell theo thứ tự
-```
-
-### Chạy ứng dụng Flutter
-```bash
-cd app
-flutter pub get
-flutter run
 ```
 
 ---
