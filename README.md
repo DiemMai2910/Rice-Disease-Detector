@@ -55,7 +55,7 @@
 │   │   ├── Brownspot
 │   │   └── Leafsmut
 │   └── train.ipynb
-├── app/                    # Ứng dụng Flutter
+├── rice_disease_detector/                    # Ứng dụng Flutter
 │   ├── lib/
 │   │   ├── main.dart
 │   │   ├── home_screen.dart
